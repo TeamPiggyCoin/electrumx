@@ -2752,3 +2752,34 @@ class Sparks(Coin):
     def header_hash(cls, header):
         import neoscrypt
         return neoscrypt.getPoWHash(header)
+
+		
+class Piggy(Coin):
+    NAME = "PiggyCoin"
+    SHORTNAME = "PIGGY"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("0488b21e")
+    XPRV_VERBYTES = bytes.fromhex("0488ade4")
+    GENESIS_HASH = ('00000561d6f5f76b0c101ba6bac27ad9'
+                    '9a18fc8927c6af844adfd913097e9271')
+    P2PKH_VERBYTE = bytes.fromhex("76")
+    P2SH_VERBYTES = [bytes.fromhex("1C")]
+    WIF_BYTE = bytes.fromhex("f6")
+    TX_PER_BLOCK = 2
+    TX_COUNT = 2250000
+    TX_COUNT_HEIGHT = 4500000
+    RPC_PORT = 54480
+    PEERS = [
+        'electrum.piggy-coin.com s t',
+        'electrum2.piggy-coin.com s t',
+    ]
+    SESSIONCLS = PiggyElectrumX
+    DESERIALIZER = lib_tx.DeserializerTxTime
+
+    @classmethod
+    def header_hash(cls, header):
+        '''Given a header return the hash.'''
+        import x11_hash
+        return x11_hash.getPoWHash(header)
+
+
