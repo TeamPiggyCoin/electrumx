@@ -2753,7 +2753,7 @@ class Sparks(Coin):
         import neoscrypt
         return neoscrypt.getPoWHash(header)
 
-		
+	
 class Piggy(Coin):
     NAME = "Piggy"
     SHORTNAME = "PIGGY"
@@ -2775,7 +2775,7 @@ class Piggy(Coin):
     ]
     # SESSIONCLS = PiggyElectrumX
     DAEMON = daemon.LegacyRPCDaemon
-	DESERIALIZER = lib_tx.DeserializerTxTime
+    DESERIALIZER = lib_tx.DeserializerTxTime
 
     @classmethod
     def header_hash(cls, header):
