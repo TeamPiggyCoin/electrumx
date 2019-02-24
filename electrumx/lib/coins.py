@@ -2755,7 +2755,7 @@ class Sparks(Coin):
 
 		
 class Piggy(Coin):
-    NAME = "PiggyCoin"
+    NAME = "Piggy"
     SHORTNAME = "PIGGY"
     NET = "mainnet"
     XPUB_VERBYTES = bytes.fromhex("0488b21e")
@@ -2773,7 +2773,7 @@ class Piggy(Coin):
         'electrum.piggy-coin.com s t',
         'electrum2.piggy-coin.com s t',
     ]
-    SESSIONCLS = PiggyElectrumX
+    # SESSIONCLS = PiggyElectrumX
     DESERIALIZER = lib_tx.DeserializerTxTime
 
     @classmethod
