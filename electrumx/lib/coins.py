@@ -2774,7 +2774,8 @@ class Piggy(Coin):
         'electrum2.piggy-coin.com s t',
     ]
     # SESSIONCLS = PiggyElectrumX
-    DESERIALIZER = lib_tx.DeserializerTxTime
+    DAEMON = daemon.LegacyRPCDaemon
+	DESERIALIZER = lib_tx.DeserializerTxTime
 
     @classmethod
     def header_hash(cls, header):
